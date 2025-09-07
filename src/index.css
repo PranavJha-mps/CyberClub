@@ -1,0 +1,414 @@
+/* src/index.css */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5; /* Light grey background for general pages */
+  color: #333; /* Dark grey text */
+  line-height: 1.6;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Basic styling for common HTML elements */
+h1, h2, h3, h4, h5, h6 {
+  color: #2c3e50; /* Slightly darker headings */
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 25px;
+  margin-bottom: 1em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* Form Elements - General Styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"],
+textarea,
+select { /* Added select for add member form */
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: calc(100% - 24px); /* Account for padding and border */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+button {
+  background-color: #007bff; /* Primary blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-right: 10px; /* Space between buttons */
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-1px); /* Slight lift effect */
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.delete-btn { /* Style for delete buttons */
+    background-color: #dc3545; /* Red */
+    margin-right: 0; /* Override default button margin */
+    padding: 8px 15px; /* Slightly smaller padding */
+    font-size: 0.9em;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.form-message {
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* Table Styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  background-color: #fff; /* White background for table */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Soft shadow */
+  border-radius: 8px; /* Rounded corners for the table */
+  overflow: hidden; /* Ensures rounded corners apply to content */
+}
+
+th, td {
+  border: 1px solid #e0e0e0; /* Lighter border for cells */
+  padding: 12px 15px;
+  text-align: left;
+}
+
+th {
+  background-color: #f8f9fa; /* Light grey header background */
+  color: #495057; /* Darker text for headers */
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+tr:nth-child(even) {
+  background-color: #fefefe; /* Slightly different background for even rows */
+}
+
+tr:hover {
+  background-color: #e9ecef; /* Highlight row on hover */
+}
+
+/* Header and Sidebar */
+.app-header {
+    background: #2c3e50; /* Darker header */
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+}
+
+.hamburger {
+    font-size: 28px; /* Larger hamburger icon */
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+    padding: 5px;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.hamburger:hover {
+    color: #cceeff;
+}
+
+.header-logo {
+    height: 40px; /* Adjust as needed */
+    margin-right: 15px;
+    border-radius: 50%; /* Makes logo round if it's square */
+    object-fit: cover; /* Ensures image covers area well */
+}
+
+.club-title {
+    margin: 0;
+    font-size: 28px;
+    background: linear-gradient(to right, #FF0000, #00FF00, #0000FF); /* RGB gradient */
+    -webkit-background-clip: text; /* Clip background to text */
+    -webkit-text-fill-color: transparent; /* Make text color transparent to show background */
+    font-weight: bold;
+}
+
+.logged-in-info {
+    margin-left: auto;
+    font-size: 16px;
+    padding-left: 15px; /* Add some padding if it's too close to title */
+}
+
+.app-sidebar {
+    width: 220px;
+    border-right: 1px solid #4a627a;
+    padding: 10px 0;
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    background: #34495e; /* Slightly lighter dark for sidebar */
+    color: #ecf0f1; /* Light text for sidebar */
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sidebar-menu-item {
+    margin-bottom: 5px;
+    padding: 0 10px;
+}
+
+.sidebar-button {
+    background: none;
+    color: #ecf0f1;
+    text-align: left;
+    border-radius: 5px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 1rem;
+    margin-right: 0; /* Override default button margin */
+}
+
+.sidebar-button:hover {
+    background-color: #4a627a;
+    color: white;
+}
+
+.sidebar-button.active { /* Active navigation item styling */
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+.sidebar-button.active:hover {
+    background-color: #0056b3;
+}
+
+.app-main-content {
+    padding: 20px;
+    flex-grow: 1;
+    min-height: calc(100vh - 50px);
+    transition: margin-left 0.3s ease;
+    box-sizing: border-box;
+    background-color: #fff; /* White background for content area */
+}
+
+.app-main-content.shifted {
+    margin-left: 220px;
+}
+
+/* Login Page Specific Styling */
+.login-page-container {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* The background-image line is now COMPLETELY REMOVED from here */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    position: relative; /* For overlay */
+}
+
+.login-page-container::before { /* Semi-transparent overlay */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 1;
+}
+
+.login-form-box {
+    max-width: 400px;
+    width: 90%; /* Responsive width */
+    padding: 30px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white for form */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* Stronger shadow */
+    text-align: center;
+    z-index: 2; /* Ensure form is above overlay */
+    backdrop-filter: blur(5px); /* Optional: Frosted glass effect */
+}
+
+.login-form-box h2 {
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-size: 2em;
+}
+
+.login-form-box input {
+    width: 100%;
+}
+
+.login-form-box button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    margin-right: 0;
+    margin-top: 10px;
+}
+
+.login-form-box .error-message {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #dc3545; /* Red error message */
+    font-weight: bold;
+}
+
+.login-info {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #e0e0e0;
+    font-size: 0.9em;
+    color: #666;
+    text-align: left;
+}
+.login-info p {
+    margin: 5px 0;
+}
+
+/* Photo gallery and upload previews */
+.photo-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+  justify-content: flex-start;
+}
+
+.photo-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  width: 160px; /* Slightly wider for better appearance */
+  box-sizing: border-box;
+  display: flex; /* Use flexbox for internal layout */
+  flex-direction: column;
+  justify-content: space-between; /* Push button to bottom */
+}
+
+.photo-item img {
+  width: 100%;
+  height: 120px; /* Slightly taller for image previews */
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.photo-item p {
+  font-size: 0.9em;
+  margin: 0 0 5px 0;
+  word-break: break-word;
+  flex-grow: 1; /* Allow text to take available space */
+}
+
+.photo-item button {
+    margin-top: auto; /* Pushes button to the bottom */
+    width: auto; /* Let button size itself */
+    align-self: center; /* Center button horizontally */
+}
+
+.image-preview {
+    margin-bottom: 15px;
+    text-align: center;
+    border: 1px dashed #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Add Member Form Specific Styling */
+.add-member-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 30px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Inner shadow */
+}
+
+.add-member-form .form-group {
+    margin-bottom: 15px;
+}
+
+.add-member-form button {
+    width: auto; /* Allow button to size naturally */
+    display: block; /* Takes full width of parent if needed */
+    margin: 20px auto 0 auto; /* Center button */
+    padding: 12px 30px;
+}
