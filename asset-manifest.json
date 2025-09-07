@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/CyberClub/static/css/main.a37c38e3.css",
+    "main.js": "/CyberClub/static/js/main.02326084.js",
+    "static/js/453.9053031b.chunk.js": "/CyberClub/static/js/453.9053031b.chunk.js",
+    "static/media/school2.jpeg": "/CyberClub/static/media/school2.4317be637ec7ede7b0a9.jpeg",
+    "index.html": "/CyberClub/index.html",
+    "main.a37c38e3.css.map": "/CyberClub/static/css/main.a37c38e3.css.map",
+    "main.02326084.js.map": "/CyberClub/static/js/main.02326084.js.map",
+    "453.9053031b.chunk.js.map": "/CyberClub/static/js/453.9053031b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a37c38e3.css",
+    "static/js/main.02326084.js"
+  ]
+}
