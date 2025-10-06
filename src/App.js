@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, useCallback } from "react";
 
 // --- Image Imports ---
@@ -171,10 +170,13 @@ function LoginPage({ handleLogin, loginId, setLoginId, loginPass, setLoginPass, 
           <button type="submit">Login</button>
         </form>
         {error && <p className="error-message">{error}</p>}
+        
+        {/* The section below showing Admin and Student IDs has been REMOVED as requested.
         <div className="login-info">
           <p>Admin ID: <b>admin</b>, Password: <b>admin123</b></p>
           <p>Student ID: <b>student1</b>, Password: <b>pass1</b></p>
         </div>
+        */}
       </div>
     </div>
   );
